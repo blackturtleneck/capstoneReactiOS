@@ -1,23 +1,58 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
+
+// HOME SCREEN
+class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home!</Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+// MESSAGES
+class MessagesScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Messages!</Text>
+      </View>
+    );
+  }
+}
+
+// DATE GENERATOR
+class DateScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Date Generator!</Text>
+      </View>
+    );
+  }
+}
+
+// SETTINGS SCREEN
+class SettingsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Settings!</Text>
+      </View>
+    );
+  }
+}
+
+
+
+export default TabNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: SettingsScreen },
+  Messages: { screen: MessagesScreen },
+  DateGenerator: { screen: DateScreen },
+  Settings: { screen: SettingsScreen },
 });
